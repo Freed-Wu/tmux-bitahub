@@ -2,6 +2,7 @@
 """Get bitahub status."""
 import sys
 from urllib import request
+from typing import List
 
 import pandas as pd
 from bs4 import BeautifulSoup, FeatureNotFound
@@ -30,13 +31,25 @@ def main(resource: str = "", col: str = "GPU_Left"):
 
     df = pd.read_html(str(soup.find("table")))[0]
     ts = df.groupby(col).count().loc[:, "node_id"]
+    s = ts.sum()
     keys = list(range(8))
     keys.reverse()
     status = dict(zip(keys, [0] * 8))
     status.update(ts.to_dict())
-    status.pop(0)
-    ret = " ".join([str(k) + ":" + str(v) for k, v in status.items()])
-    print(ret)
+    for k in list(status.keys()):
+        if k <= 0:
+            status.pop(k)
+    results: List[str] = []
+    for k, v in status.items():
+        if v == 0:
+            color = "red"
+        elif v >= s / 8:
+            color = "green"
+        else:
+            color = "yellow"
+        result = "#[fg=black]" + str(k) + ":#[fg=" + color + "]" + str(v)
+        results += [result]
+    print(" ".join(results) + "#[fg=default]")
 
 
 if __name__ == "__main__":

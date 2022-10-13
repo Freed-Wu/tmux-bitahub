@@ -28,6 +28,8 @@
 Display [bitahub](https://www.bitahub.com/resources) GPU status in
 [tmux](https://github.com/tmux/tmux) status line.
 
+![Screenshot](https://user-images.githubusercontent.com/32936898/195630374-4936c529-022f-478c-b29c-0127493a1267.png)
+
 <!-- mdformat-toc start --slug=github --no-anchors --maxlevel=6 --minlevel=1 -->
 
 - [tmux-bitahub](#tmux-bitahub)
