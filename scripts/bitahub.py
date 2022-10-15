@@ -34,9 +34,11 @@ def get_result(html: str, col: str = "GPU_Left"):
     """
     try:
         soup = BeautifulSoup(html, "lxml")
+        flavor = "lxml"
     except FeatureNotFound:
         soup = BeautifulSoup(html, "html.parser")
-    df = pd.read_html(str(soup.find("table")), flavor="bs4")[0]
+        flavor = "bs4"
+    df = pd.read_html(str(soup.find("table")), flavor=flavor)[0]
     ts = df.groupby(col).count().loc[:, "node_id"]
     s = ts.sum()
     number_gpu_max = 8

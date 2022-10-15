@@ -1,6 +1,5 @@
 # tmux-bitahub
 
-[![github/license](https://shields.io/github/license/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/blob/master/LICENSE)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/tmux-bitahub/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/tmux-bitahub/main)
 [![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/tmux-bitahub/python)](https://github.com/Freed-Wu/tmux-bitahub/actions)
 
@@ -20,6 +19,7 @@
 [![github/last-commit](https://shields.io/github/last-commit/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/commits)
 [![github/release-date](https://shields.io/github/release-date/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/releases/latest)
 
+[![github/license](https://shields.io/github/license/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/blob/master/LICENSE)
 ![github/languages](https://shields.io/github/languages/count/Freed-Wu/tmux-bitahub)
 ![github/languages/top](https://shields.io/github/languages/top/Freed-Wu/tmux-bitahub)
 ![github/directory-file-count](https://shields.io/github/directory-file-count/Freed-Wu/tmux-bitahub)
