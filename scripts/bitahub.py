@@ -32,9 +32,11 @@ def main(resource: str = "", col: str = "GPU_Left"):
     df = pd.read_html(str(soup.find("table")))[0]
     ts = df.groupby(col).count().loc[:, "node_id"]
     s = ts.sum()
-    keys = list(range(8))
+    number_gpu_max = 8
+    num = number_gpu_max + 1
+    keys = list(range(num))
     keys.reverse()
-    status = dict(zip(keys, [0] * 8))
+    status = dict(zip(keys, [0] * num))
     status.update(ts.to_dict())
     for k in list(status.keys()):
         if k <= 0:
@@ -43,7 +45,7 @@ def main(resource: str = "", col: str = "GPU_Left"):
     for k, v in status.items():
         if v == 0:
             color = "red"
-        elif v >= s / 8:
+        elif v >= s / num:
             color = "green"
         else:
             color = "yellow"

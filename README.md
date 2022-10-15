@@ -28,14 +28,13 @@
 Display [bitahub](https://www.bitahub.com/resources) GPU status in
 [tmux](https://github.com/tmux/tmux) status line.
 
-![Screenshot](https://user-images.githubusercontent.com/32936898/195630374-4936c529-022f-478c-b29c-0127493a1267.png)
+![Screenshot](https://user-images.githubusercontent.com/32936898/195975347-4024f8a9-3f13-4e1a-b84d-0e366d599c7f.png)
 
-<!-- mdformat-toc start --slug=github --no-anchors --maxlevel=6 --minlevel=1 -->
+<!-- mdformat-toc start --slug=github --no-anchors --maxlevel=6 --minlevel=2 -->
 
-- [tmux-bitahub](#tmux-bitahub)
-  - [Configure](#configure)
-  - [Install](#install)
-  - [Requirements](#requirements)
+- [Configure](#configure)
+- [Install](#install)
+- [Requirements](#requirements)
 
 <!-- mdformat-toc end -->
 
@@ -45,7 +44,7 @@ See
 [here](https://github.com/Freed-Wu/tmux-bitahub/search?q=%23%7Bbitahub_status_).
 E.g., the following line can display
 
-> 1080ti 7:0 6:0 5:0 4:0 3:0 2:0 1:0
+> 1080ti 8:0 7:0 6:0 5:0 4:0 3:0 2:0 1:0
 
 in the right status line of tmux. (Because now no any GTX1080Ti GPU left.)
 
