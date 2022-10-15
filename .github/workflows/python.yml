@@ -1,5 +1,5 @@
 ---
-name: python-test
+name: python
 
 on:  # yamllint disable-line rule:truthy
   push:
