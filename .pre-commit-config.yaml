@@ -32,7 +32,8 @@ repos:
     rev: v0.17.0
     hooks:
       - id: gitlint
-        args: [--msg-filename]
+        args:
+          - --msg-filename
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.6.1
     hooks:
@@ -43,12 +44,16 @@ repos:
       - id: check-mailmap
       - id: shellcheck
       - id: shfmt
-        args: [-i, "2"]
+        args:
+          - -i
+          - "2"
+        exclude: .*\.zsh$|^\.z(profile|shrc)$
   - repo: https://github.com/executablebooks/mdformat
     rev: 0.7.16
     hooks:
       - id: mdformat
-        args: [--number]
+        args:
+          - --number
         additional_dependencies:
           - mdformat-gfm
           - mdformat-myst

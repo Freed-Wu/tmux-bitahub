@@ -8,13 +8,11 @@ import pandas as pd
 from bs4 import BeautifulSoup, FeatureNotFound
 
 
-def main(resource: str = "", col: str = "GPU_Left"):
+def main(resource: str = ""):
     """Get bitahub status.
 
     :param resource:
     :type resource: str
-    :param col:
-    :type col: str
     """
     if resource == "":
         try:
@@ -23,12 +21,21 @@ def main(resource: str = "", col: str = "GPU_Left"):
             resource = "gtx1080ti"
     with request.urlopen("https://www.bitahub.com/resources/" + resource) as f:
         html = f.read()
+    print(get_result(html))
 
+
+def get_result(html: str, col: str = "GPU_Left"):
+    """Get result.
+
+    :param html:
+    :type html: str
+    :param col:
+    :type col: str
+    """
     try:
         soup = BeautifulSoup(html, "lxml")
     except FeatureNotFound:
         soup = BeautifulSoup(html, "html.parser")
-
     df = pd.read_html(str(soup.find("table")))[0]
     ts = df.groupby(col).count().loc[:, "node_id"]
     s = ts.sum()
@@ -51,7 +58,7 @@ def main(resource: str = "", col: str = "GPU_Left"):
             color = "yellow"
         result = "#[fg=black]" + str(k) + ":#[fg=" + color + "]" + str(v)
         results += [result]
-    print(" ".join(results) + "#[fg=default]")
+    return " ".join(results) + "#[fg=default]"
 
 
 if __name__ == "__main__":
