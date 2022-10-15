@@ -42,17 +42,17 @@ Display [bitahub](https://www.bitahub.com/resources) GPU status in
 
 ## Configure
 
-See
-[here](https://github.com/Freed-Wu/tmux-bitahub/search?q=%23%7Bbitahub_status_).
-E.g., the following line can display
-
-> 1080ti 8:0 7:0 6:0 5:0 4:0 3:0 2:0 1:0
-
-in the right status line of tmux. (Because now no any GTX1080Ti GPU left.)
+See [array `interpolation`](bitahub.tmux). E.g.,
 
 ```sh
 tmux set -g status-right "1080ti #{bitahub_status_gtx1080ti}"
 ```
+
+can display
+
+> 1080ti 8:0 7:0 6:0 5:0 4:0 3:0 2:0 1:0
+
+in the right status line of tmux. (Because now no any GTX1080Ti GPU left.)
 
 ## Install
 
