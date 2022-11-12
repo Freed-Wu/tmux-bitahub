@@ -1,9 +1,9 @@
 # tmux-bitahub
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/tmux-bitahub/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/tmux-bitahub/main)
-[![github/workflow](https://github.com/Freed-Wu/tmux-bitahub/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/tmux-bitahub/actions)
+[![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/tmux-bitahub/python)](https://github.com/Freed-Wu/tmux-bitahub/actions)
 [![codecov](https://codecov.io/gh/Freed-Wu/tmux-bitahub/branch/main/graph/badge.svg)](https://codecov.io/gh/Freed-Wu/tmux-bitahub)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub?ref=badge_shield)
 
 [![github/downloads](https://shields.io/github/downloads/Freed-Wu/tmux-bitahub/total)](https://github.com/Freed-Wu/tmux-bitahub/releases)
 [![github/downloads/latest](https://shields.io/github/downloads/Freed-Wu/tmux-bitahub/latest/total)](https://github.com/Freed-Wu/tmux-bitahub/releases/latest)
@@ -39,6 +39,7 @@ Display [bitahub](https://www.bitahub.com/resources) GPU status in
 - [Configure](#configure)
 - [Install](#install)
 - [Requirements](#requirements)
+- [License](#license)
 
 <!-- mdformat-toc end -->
 
@@ -63,3 +64,7 @@ See [tpm](https://github.com/tmux-plugins/tpm).
 ## Requirements
 
 See [requirements.txt](requirements.txt).
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub?ref=badge_large)
