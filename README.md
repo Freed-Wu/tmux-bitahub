@@ -38,6 +38,7 @@ Display [bitahub](https://www.bitahub.com/resources) GPU status in
 - [Configure](#configure)
 - [Install](#install)
 - [Requirements](#requirements)
+- [License](#license)
 
 <!-- mdformat-toc end -->
 
@@ -63,6 +64,6 @@ See [tpm](https://github.com/tmux-plugins/tpm).
 
 See [requirements.txt](requirements.txt).
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub?ref=badge_large)
