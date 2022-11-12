@@ -2,6 +2,7 @@
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/tmux-bitahub/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/tmux-bitahub/main)
 [![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/tmux-bitahub/python)](https://github.com/Freed-Wu/tmux-bitahub/actions)
+[![codecov](https://codecov.io/gh/Freed-Wu/tmux-bitahub/branch/main/graph/badge.svg)](https://codecov.io/gh/Freed-Wu/tmux-bitahub)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub?ref=badge_shield)
 
 [![github/downloads](https://shields.io/github/downloads/Freed-Wu/tmux-bitahub/total)](https://github.com/Freed-Wu/tmux-bitahub/releases)

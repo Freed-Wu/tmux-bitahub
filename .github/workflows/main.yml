@@ -1,10 +1,6 @@
 ---
-name: python
-
-on:  # yamllint disable-line rule:truthy
+"on":
   push:
-    branches:
-      - main
     paths-ignore:
       - '**.md'
   pull_request:
@@ -12,17 +8,19 @@ on:  # yamllint disable-line rule:truthy
       - '**.md'
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: 3.x
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           ./requirements.txt
-          ./requirements/test.txt
+          ./requirements/dev.txt
       - name: Test
-        run: pytest
+        run: |
+          pytest --cov .
+      - uses: codecov/codecov-action@v3
