@@ -1,7 +1,7 @@
 # tmux-bitahub
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/tmux-bitahub/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/tmux-bitahub/main)
-[![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/tmux-bitahub/python)](https://github.com/Freed-Wu/tmux-bitahub/actions)
+[![github/workflow](https://github.com/Freed-Wu/tmux-bitahub/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/tmux-bitahub/actions)
 [![codecov](https://codecov.io/gh/Freed-Wu/tmux-bitahub/branch/main/graph/badge.svg)](https://codecov.io/gh/Freed-Wu/tmux-bitahub)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreed-Wu%2Ftmux-bitahub?ref=badge_shield)
 
@@ -21,7 +21,7 @@
 [![github/last-commit](https://shields.io/github/last-commit/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/commits)
 [![github/release-date](https://shields.io/github/release-date/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/releases/latest)
 
-[![github/license](https://shields.io/github/license/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/blob/master/LICENSE)
+[![github/license](https://shields.io/github/license/Freed-Wu/tmux-bitahub)](https://github.com/Freed-Wu/tmux-bitahub/blob/main/LICENSE)
 ![github/languages](https://shields.io/github/languages/count/Freed-Wu/tmux-bitahub)
 ![github/languages/top](https://shields.io/github/languages/top/Freed-Wu/tmux-bitahub)
 ![github/directory-file-count](https://shields.io/github/directory-file-count/Freed-Wu/tmux-bitahub)

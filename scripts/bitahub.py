@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """Get bitahub status."""
 import sys
-from urllib import request
 from typing import List
+from urllib import request
 
 import pandas as pd
 from bs4 import BeautifulSoup, FeatureNotFound
@@ -19,7 +19,9 @@ def main(resource: str = ""):
             resource = sys.argv[1]
         except IndexError:
             resource = "gtx1080ti"
-    with request.urlopen("https://www.bitahub.com/resources/" + resource) as f:
+    with request.urlopen(  # nosec: B310
+        "https://www.bitahub.com/resources/" + resource
+    ) as f:
         html = f.read()
     print(get_result(html))
 

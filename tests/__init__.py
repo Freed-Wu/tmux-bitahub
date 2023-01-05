@@ -1,6 +1,6 @@
 """``{docs,tests}/__init__.py``."""
-import sys
 import os
+import sys
 from os.path import dirname as dirn
 from typing import Final
 
