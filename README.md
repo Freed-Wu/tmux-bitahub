@@ -29,7 +29,7 @@
 ![github/repo-size](https://shields.io/github/repo-size/Freed-Wu/tmux-bitahub)
 ![github/v](https://shields.io/github/v/release/Freed-Wu/tmux-bitahub)
 
-Display [bitahub](https://www.bitahub.com/resources) GPU status in
+Display [bitahub](https://bitahub.ustc.edu.cn/resources) GPU status in
 [tmux](https://github.com/tmux/tmux) status line.
 
 ![Screenshot](https://user-images.githubusercontent.com/32936898/195975347-4024f8a9-3f13-4e1a-b84d-0e366d599c7f.png)

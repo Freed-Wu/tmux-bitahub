@@ -20,7 +20,7 @@ def main(resource: str = ""):
         except IndexError:
             resource = "gtx1080ti"
     with request.urlopen(  # nosec: B310
-        "https://www.bitahub.com/resources/" + resource
+        "https://bitahub.ustc.edu.cn/resources/" + resource
     ) as f:
         html = f.read()
     print(get_result(html))
