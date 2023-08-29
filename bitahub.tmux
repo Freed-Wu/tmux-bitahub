@@ -3,11 +3,11 @@
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 interpolation=(
-	"\#{bitahub_status_titanxp}"
-	"\#{bitahub_status_gtx1080ti}"
-	"\#{bitahub_status_rtx3090}"
-	"\#{bitahub_status_teslav100}"
-	"\#{bitahub_status_debug}"
+	"#{bitahub_status_titanxp}"
+	"#{bitahub_status_gtx1080ti}"
+	"#{bitahub_status_rtx3090}"
+	"#{bitahub_status_teslav100}"
+	"#{bitahub_status_debug}"
 )
 commands=(
 	"#($CURRENT_DIR/scripts/bitahub.py titanxp)"
