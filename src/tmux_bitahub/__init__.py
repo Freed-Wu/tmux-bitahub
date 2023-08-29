@@ -1,32 +1,27 @@
-#!/usr/bin/env python
 """Get bitahub status."""
-import sys
-from typing import List
+from typing import List, Literal
 from urllib import request
 
 import pandas as pd
 from bs4 import BeautifulSoup, FeatureNotFound
 
+RESOURCE = Literal["titanxp", "gtx1080ti", "rtx3090", "teslav100", "debug"]
 
-def main(resource: str = ""):
+
+def get_gpu_status(resource: RESOURCE = "gtx1080ti") -> str:
     """Get bitahub status.
 
     :param resource:
-    :type resource: str
+    :type resource: Literal["titanxp", "gtx1080ti", "rtx3090", "teslav100", "debug"]
     """
-    if resource == "":
-        try:
-            resource = sys.argv[1]
-        except IndexError:
-            resource = "gtx1080ti"
     with request.urlopen(  # nosec: B310
         "https://bitahub.ustc.edu.cn/resources/" + resource
     ) as f:
         html = f.read()
-    print(get_result(html))
+    return get_result(html)
 
 
-def get_result(html: str, col: str = "GPU_Left"):
+def get_result(html: str, col: str = "GPU_Left") -> str:
     """Get result.
 
     :param html:
@@ -63,7 +58,3 @@ def get_result(html: str, col: str = "GPU_Left"):
         result = "#[fg=black]" + str(k) + ":#[fg=" + color + "]" + str(v)
         results += [result]
     return " ".join(results) + "#[fg=default]"
-
-
-if __name__ == "__main__":
-    main()

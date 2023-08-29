@@ -1,3 +1,65 @@
+[build-system]
+requires = ["setuptools_scm[toml] >= 6.2", "setuptools-generate >= 0.0.6"]
+build-backend = "setuptools.build_meta"
+
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+[project]
+name = "tmux-bitahub"
+description = "Display bitahub GPU status in tmux status line"
+readme = "README.md"
+requires-python = ">= 3.7"
+keywords = ["bitahub", "tmux"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Build Tools",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX",
+  "Operating System :: Unix",
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version", "dependencies", "optional-dependencies"]
+
+[[project.authors]]
+name = "Wu Zhenyu"
+email = "wuzhenyu@ustc.edu"
+
+[project.license]
+text = "GPL v3"
+
+[project.urls]
+Homepage = "https://tmux-bitahub.readthedocs.io"
+Download = "https://github.com/Freed-Wu/tmux-bitahub/releases"
+"Bug Report" = "https://github.com/Freed-Wu/tmux-bitahub/issues"
+Source = "https://github.com/Freed-Wu/tmux-bitahub"
+
+[tool.setuptools.package-data]
+tmux_bitahub = ["py.typed", "assets/**"]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+# begin: scripts/update-pyproject.toml.pl
+[tool.setuptools.dynamic.optional-dependencies.dev]
+file = "requirements/dev.txt"
+# end: scripts/update-pyproject.toml.pl
+
+[tool.setuptools_scm]
+write_to = "src/tmux_bitahub/_version.py"
+
+[tool.setuptools-generate]
+write-to = "src/tmux_bitahub/_metainfo.py"
+
 [tool.mdformat]
 number = true
 
@@ -23,7 +85,9 @@ exclude_lines = [
 ]
 
 [tool.bandit.assert_used]
-skips = [
-  "*_test.py",
-  "test_*.py",
-]
+skips = ["*_test.py", "test_*.py"]
+
+[tool.cibuildwheel]
+archs = ["all"]
+before-test = "pip install pytest"
+test-command = "pytest {project}"

@@ -1,5 +1,6 @@
 # tmux-bitahub
 
+[![readthedocs](https://shields.io/readthedocs/tmux-bitahub)](https://tmux-bitahub.readthedocs.io)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/tmux-bitahub/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/tmux-bitahub/main)
 [![github/workflow](https://github.com/Freed-Wu/tmux-bitahub/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/tmux-bitahub/actions)
 [![codecov](https://codecov.io/gh/Freed-Wu/tmux-bitahub/branch/main/graph/badge.svg)](https://codecov.io/gh/Freed-Wu/tmux-bitahub)
@@ -29,6 +30,13 @@
 ![github/repo-size](https://shields.io/github/repo-size/Freed-Wu/tmux-bitahub)
 ![github/v](https://shields.io/github/v/release/Freed-Wu/tmux-bitahub)
 
+[![pypi/status](https://shields.io/pypi/status/tmux-bitahub)](https://pypi.org/project/tmux-bitahub/#description)
+[![pypi/v](https://shields.io/pypi/v/tmux-bitahub)](https://pypi.org/project/tmux-bitahub/#history)
+[![pypi/downloads](https://shields.io/pypi/dd/tmux-bitahub)](https://pypi.org/project/tmux-bitahub/#files)
+[![pypi/format](https://shields.io/pypi/format/tmux-bitahub)](https://pypi.org/project/tmux-bitahub/#files)
+[![pypi/implementation](https://shields.io/pypi/implementation/tmux-bitahub)](https://pypi.org/project/tmux-bitahub/#files)
+[![pypi/pyversions](https://shields.io/pypi/pyversions/tmux-bitahub)](https://pypi.org/project/tmux-bitahub/#files)
+
 Display [bitahub](https://bitahub.ustc.edu.cn/resources) GPU status in
 [tmux](https://github.com/tmux/tmux) status line.
 
@@ -38,7 +46,8 @@ Display [bitahub](https://bitahub.ustc.edu.cn/resources) GPU status in
 
 - [Configure](#configure)
 - [Install](#install)
-- [Requirements](#requirements)
+- [tpm](#tpm)
+- [PYPI](#pypi)
 - [License](#license)
 
 <!-- mdformat-toc end -->
@@ -59,11 +68,24 @@ in the right status line of tmux. (Because now no any GTX1080Ti GPU left.)
 
 ## Install
 
-See [tpm](https://github.com/tmux-plugins/tpm).
+## [tpm](https://github.com/tmux-plugins/tpm)
 
-## Requirements
+```tmux
+set -g @plugin Freed-Wu/tmux-bitahub
+run ~/.config/tmux/plugins/tpm/tpm
+```
 
-See [requirements.txt](requirements.txt).
+Make sure [requirements.txt](requirements.txt) has been installed.
+
+## [PYPI](https://pypi.org/project/tmux-bitahub)
+
+```sh
+pip install tmux-bitahub
+```
+
+```tmux
+run-shell python -m tmux_bitahub
+```
 
 ## License
 

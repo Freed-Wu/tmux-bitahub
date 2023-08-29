@@ -2,25 +2,84 @@
 "on":
   push:
     paths-ignore:
-      - '**.md'
+      - "**.md"
+      - docs/*
   pull_request:
     paths-ignore:
-      - '**.md'
+      - "**.md"
+      - docs/*
+  workflow_dispatch:
+
+# https://github.com/softprops/action-gh-release/issues/236
+permissions:
+  contents: write
+
+env:
+  PYTHONUTF8: "1"
+  cache: pip
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        runs-on:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    runs-on: ${{matrix.runs-on}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: 3.x
+          cache: ${{env.cache}}
+          cache-dependency-path: |-
+            requirements.txt
+            requirements/dev.txt
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          ./requirements.txt
-          ./requirements/dev.txt
+          pip install -e '.[dev]'
       - name: Test
         run: |
-          pytest --cov .
+          pytest --cov
       - uses: codecov/codecov-action@v3
+
+  build:
+    needs: test
+    strategy:
+      fail-fast: false
+      matrix:
+        runs-on:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    runs-on: ${{matrix.runs-on}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          cache: ${{env.cache}}
+          cache-dependency-path: |-
+            requirements.txt
+            requirements/dev.txt
+      - name: Install dependencies
+        run: |
+          pip install build
+      - name: Build
+        run: |
+          pyproject-build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        if: runner.os == 'Linux' && startsWith(github.ref, 'refs/tags/')
+        with:
+          password: ${{secrets.PYPI_API_TOKEN}}
+      - uses: actions/upload-artifact@v3
+        if: runner.os == 'Linux' && ! startsWith(github.ref, 'refs/tags/')
+        with:
+          path: |
+            dist/*
+      - uses: softprops/action-gh-release@v1
+        if: runner.os == 'Linux' && startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: build/CHANGELOG.md
+          files: |
+            dist/*

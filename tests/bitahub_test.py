@@ -1,5 +1,5 @@
 """bitahub_test."""
-from bitahub import get_result  # type: ignore
+from tmux_bitahub import get_result  # type: ignore
 
 
 class Test:
