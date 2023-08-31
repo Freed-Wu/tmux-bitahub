@@ -44,7 +44,6 @@ repos:
     rev: 3.0.0
     hooks:
       - id: check-mailmap
-      - id: shellcheck
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.32.0
     hooks:
@@ -68,10 +67,6 @@ repos:
       - id: markdownlint-cli2
         additional_dependencies:
           - markdown-it-texmath@0.9.1
-  - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.7.0-1
-    hooks:
-      - id: shfmt
   - repo: https://github.com/psf/black
     rev: 23.7.0
     hooks:
@@ -101,5 +96,4 @@ repos:
 
 ci:
   skip:
-    - shellcheck
     - pyright
