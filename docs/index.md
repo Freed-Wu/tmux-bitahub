@@ -4,6 +4,15 @@
 ---
 hidden:
 glob:
+caption: resources
+---
+resources/*
+```
+
+```{toctree}
+---
+hidden:
+glob:
 caption: API
 ---
 api/*
