@@ -1,7 +1,7 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
       - id: fix-byte-order-marker
@@ -21,11 +21,11 @@ repos:
       - id: check-toml
       - id: check-json
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.4
+    rev: v1.5.5
     hooks:
       - id: remove-crlf
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.5
+    rev: v2.3.0
     hooks:
       - id: codespell
         additional_dependencies:
@@ -37,7 +37,7 @@ repos:
         args:
           - --msg-filename
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.7.2
+    rev: 3.0.3
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
@@ -45,11 +45,11 @@ repos:
     hooks:
       - id: check-mailmap
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.32.0
+    rev: v1.35.1
     hooks:
       - id: yamllint
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16
+    rev: 0.7.19
     hooks:
       - id: mdformat
         additional_dependencies:
@@ -59,36 +59,24 @@ repos:
           - mdformat-toc
           - mdformat-deflist
           - mdformat-beautysh
-          - mdformat-black
+          - mdformat-ruff
           - mdformat-config
+          - mdformat-web
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.8.1
+    rev: v0.16.0
     hooks:
       - id: markdownlint-cli2
         additional_dependencies:
-          - markdown-it-texmath@0.9.1
-  - repo: https://github.com/psf/black
-    rev: 23.7.0
+          - markdown-it-texmath
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.2
     hooks:
-      - id: black
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.3.0
-    hooks:
-      - id: pydocstyle
-        additional_dependencies:
-          - tomli
+      - id: ruff
+      - id: ruff-format
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.322
+    rev: v1.1.390
     hooks:
       - id: pyright
-  - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.5
-    hooks:
-      - id: bandit
         args:
           - -cpyproject.toml
         additional_dependencies:
