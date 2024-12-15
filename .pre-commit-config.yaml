@@ -77,10 +77,6 @@ repos:
     rev: v1.1.390
     hooks:
       - id: pyright
-        args:
-          - -cpyproject.toml
-        additional_dependencies:
-          - tomli
 
 ci:
   skip:
