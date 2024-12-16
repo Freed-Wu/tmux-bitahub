@@ -1,4 +1,5 @@
 """Get bitahub status."""
+
 from typing import List, Literal
 from urllib import request
 

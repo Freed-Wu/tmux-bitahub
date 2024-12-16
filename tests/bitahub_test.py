@@ -1,4 +1,5 @@
 """bitahub_test."""
+
 from tmux_bitahub import get_result  # type: ignore
 
 
