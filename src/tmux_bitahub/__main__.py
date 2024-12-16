@@ -1,6 +1,7 @@
 r"""This module can be called by
 `python -m <https://docs.python.org/3/library/__main__.html>`_.
 """
+
 from shlex import split
 from subprocess import check_output  # nosec: B404
 from typing import Callable
