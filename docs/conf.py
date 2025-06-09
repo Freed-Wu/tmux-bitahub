@@ -2,6 +2,7 @@ r"""Configure the Sphinx documentation builder.
 
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
+
 from tmux_bitahub import __version__ as version  # type: ignore
 from tmux_bitahub._metainfo import author, copyright, project  # type: ignore
 
